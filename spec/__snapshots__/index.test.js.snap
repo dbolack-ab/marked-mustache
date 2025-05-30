@@ -1,61 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Hard Breaks Break directly between two paragraphs 1`] = `
-"<p>Line 1</p>
-<br>
-<br>
-<p>Line 2</p>
-"
-`;
+exports[`Injection: When an injection tag follows an element and that element is a block Renders a span "text" with its own ID, overwritten with an injected ID 1`] = `"<p>{{#oldIdtext}}{#newId}</p>"`;
 
-exports[`Hard Breaks Double Break 1`] = `
-"<br>
-<br>
-"
-`;
+exports[`Injection: When an injection tag follows an element and that element is a block Renders a span "text" with its own attributes, overwritten with an injected attribute, ignoring "class", "style", and "id" 1`] = `"<p>{{attrA=&quot;old&quot;,attrB=&quot;old&quot;text}}{attrA=&quot;new&quot;,attrC=&quot;new&quot;,class=&quot;new&quot;,style=&quot;new&quot;,id=&quot;new&quot;}</p>"`;
 
-exports[`Hard Breaks Ignored inside a code block 1`] = `
-"<pre><code>
-:
-</code></pre>
-"
-`;
+exports[`Injection: When an injection tag follows an element and that element is a block Renders a span "text" with its own attributes, overwritten with an injected attribute, plus a new one 1`] = `"<p>{{attrA=&quot;old&quot;,attrB=&quot;old&quot;text}}{attrA=&quot;new&quot;,attrC=&quot;new&quot;}</p>"`;
 
-exports[`Hard Breaks Many Break 1`] = `
-"<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-"
-`;
+exports[`Injection: When an injection tag follows an element and that element is a block Renders a span "text" with its own classes, appended with injected classes 1`] = `"<p>{{classA,classBtext}}{classA,classC}</p>"`;
 
-exports[`Hard Breaks Multiple sets of Breaks 1`] = `
-"<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-"
-`;
+exports[`Injection: When an injection tag follows an element and that element is a block Renders a span "text" with its own styles, appended with injected styles 1`] = `"<p>{{color:blue,height:10pxtext}}{width:10px,color:red}</p>"`;
 
-exports[`Hard Breaks Single Break 1`] = `
-"<br>
-"
-`;
+exports[`Injection: When an injection tag follows an element and that element is a block renders a div "text" with injected variable string 1`] = `"<p>{{text}}{--stringVariable:&quot;&#39;string&#39;&quot;}</p>"`;
 
-exports[`Hard Breaks Triple Break 1`] = `
-"<br>
-<br>
-<br>
-"
-`;
+exports[`Injection: When an injection tag follows an element and that element is a block renders a div "text" with two injected styles 1`] = `"<p>{{text}}{color:red,background:blue}</p>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is a block renders a div nested into another div, the inner with class=innerDiv and the other class=outerDiv 1`] = `"<p>{{outer text{{inner text}}{innerDiv}}}{outerDiv}</p>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is a block renders a table with injected class name 1`] = `"<table><thead><tr><th align="left">Experience Points</th><th align="center">Level</th></tr></thead><tbody><tr><td align="left">0</td><td align="center">1</td></tr><tr><td align="left">300</td><td align="center">2</td></tr></tbody></table><p>{ClassName}</p>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is a block renders an h2 header "text" with injected class name 1`] = `"<h2>text</h2><p>{ClassName}</p>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is a block renders an h2 header "text" with injected class name, and "secondInjection" as regular text on the next line. 1`] = `"<h2>text</h2><p>{ClassName}{secondInjection}</p>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders an image and added attributes with "=" in the value,  1`] = `"<p><img src="https://i.imgur.com/hMna6G0.png" alt="homebrew mug"> {position:absolute,bottom:20px,left:130px,width:220px,a=&quot;b and c&quot;,d=e,otherUrl=&quot;url?auth=12345&quot;}</p>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders an image with "=" in the url, and added attributes 1`] = `"<p><img src="https://i.imgur.com/hMna6G0.png?auth=12345&height=1024" alt="homebrew mug"> {position:absolute,bottom:20px,left:130px,width:220px,a=&quot;b and c&quot;,d=e}</p>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders an image with added attributes 1`] = `"<p><img src="https://i.imgur.com/hMna6G0.png" alt="homebrew mug"> {position:absolute,bottom:20px,left:130px,width:220px,a=&quot;b and c&quot;,d=e}</p>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders an parent and child element, each modified by an injector 1`] = `"<p><strong>bolded text</strong>{color:red}{color:blue}</p>"`;
