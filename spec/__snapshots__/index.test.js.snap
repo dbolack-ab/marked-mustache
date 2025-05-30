@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hard Breaks Break directly between two paragraphs 1`] = `
+"<p>Line 1</p>
+<br>
+<br>
+<p>Line 2</p>
+"
+`;
+
+exports[`Hard Breaks Double Break 1`] = `
+"<br>
+<br>
+"
+`;
+
+exports[`Hard Breaks Ignored inside a code block 1`] = `
+"<pre><code>
+:
+</code></pre>
+"
+`;
+
+exports[`Hard Breaks Many Break 1`] = `
+"<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+"
+`;
+
+exports[`Hard Breaks Multiple sets of Breaks 1`] = `
+"<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+"
+`;
+
+exports[`Hard Breaks Single Break 1`] = `
+"<br>
+"
+`;
+
+exports[`Hard Breaks Triple Break 1`] = `
+"<br>
+<br>
+<br>
+"
+`;
