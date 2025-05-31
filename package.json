@@ -1,6 +1,6 @@
 {
   "name": "marked-mustache",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mustache style expansion for Marked.js",
   "main": "./lib/index.cjs",
   "module": "./src/index.js",
@@ -9,8 +9,8 @@
   "keywords": [
     "marked",
     "extension",
-    "superscript",
-    "subscript"
+    "mustaches",
+    "styles"
   ],
   "scripts": {
     "test": "jest --verbose",
