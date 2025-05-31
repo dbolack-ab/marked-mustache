@@ -1,31 +1,284 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Injection: When an injection tag follows an element and that element is a block Renders a span "text" with its own ID, overwritten with an injected ID 1`] = `"<p>{{#oldIdtext}}{#newId}</p>"`;
+exports[`Block: When using the Block syntax {{tags\\ntext\\n}} Renders a div with a class, style and text 1`] = `
+"<div class="block cat" style="color:red;"><p>Sample text.</p>
+</div>"
+`;
 
-exports[`Injection: When an injection tag follows an element and that element is a block Renders a span "text" with its own attributes, overwritten with an injected attribute, ignoring "class", "style", and "id" 1`] = `"<p>{{attrA=&quot;old&quot;,attrB=&quot;old&quot;text}}{attrA=&quot;new&quot;,attrC=&quot;new&quot;,class=&quot;new&quot;,style=&quot;new&quot;,id=&quot;new&quot;}</p>"`;
+exports[`Block: When using the Block syntax {{tags\\ntext\\n}} Renders a div with a single ID 1`] = `
+"<div class="block" id="cat"><p>Sample text.</p>
+</div>"
+`;
 
-exports[`Injection: When an injection tag follows an element and that element is a block Renders a span "text" with its own attributes, overwritten with an injected attribute, plus a new one 1`] = `"<p>{{attrA=&quot;old&quot;,attrB=&quot;old&quot;text}}{attrA=&quot;new&quot;,attrC=&quot;new&quot;}</p>"`;
+exports[`Block: When using the Block syntax {{tags\\ntext\\n}} Renders a div with a single class 1`] = `
+"<p>{{cat
+}}</p>
+"
+`;
 
-exports[`Injection: When an injection tag follows an element and that element is a block Renders a span "text" with its own classes, appended with injected classes 1`] = `"<p>{{classA,classBtext}}{classA,classC}</p>"`;
+exports[`Block: When using the Block syntax {{tags\\ntext\\n}} Renders a div with a single class and text 1`] = `
+"<div class="block cat"><p>Sample text.</p>
+</div>"
+`;
 
-exports[`Injection: When an injection tag follows an element and that element is a block Renders a span "text" with its own styles, appended with injected styles 1`] = `"<p>{{color:blue,height:10pxtext}}{width:10px,color:red}</p>"`;
+exports[`Block: When using the Block syntax {{tags\\ntext\\n}} Renders a div with a style and text 1`] = `
+"<div class="block" style="color:red;"><p>Sample text.</p>
+</div>"
+`;
 
-exports[`Injection: When an injection tag follows an element and that element is a block renders a div "text" with injected variable string 1`] = `"<p>{{text}}{--stringVariable:&quot;&#39;string&#39;&quot;}</p>"`;
+exports[`Block: When using the Block syntax {{tags\\ntext\\n}} Renders a div with a style that has a string variable, and text 1`] = `
+"<div class="block" style="--stringVariable:'string';"><p>Sample text.</p>
+</div>"
+`;
 
-exports[`Injection: When an injection tag follows an element and that element is a block renders a div "text" with two injected styles 1`] = `"<p>{{text}}{color:red,background:blue}</p>"`;
+exports[`Block: When using the Block syntax {{tags\\ntext\\n}} Renders a div with a style that has a string variable, and text 2`] = `
+"<div class="block" style="--stringVariable:'string';"><p>Sample text.</p>
+</div>"
+`;
 
-exports[`Injection: When an injection tag follows an element and that element is a block renders a div nested into another div, the inner with class=innerDiv and the other class=outerDiv 1`] = `"<p>{{outer text{{inner text}}{innerDiv}}}{outerDiv}</p>"`;
+exports[`Block: When using the Block syntax {{tags\\ntext\\n}} Renders a div with added attributes 1`] = `
+"<div class="block pen" id="author" style="color:orange; font-family:trebuchet ms;" a="b and c" d="e"><p>Text and text and more text!</p>
+</div>"
+`;
 
-exports[`Injection: When an injection tag follows an element and that element is a block renders a table with injected class name 1`] = `"<table><thead><tr><th align="left">Experience Points</th><th align="center">Level</th></tr></thead><tbody><tr><td align="left">0</td><td align="center">1</td></tr><tr><td align="left">300</td><td align="center">2</td></tr></tbody></table><p>{ClassName}</p>"`;
+exports[`Block: When using the Block syntax {{tags\\ntext\\n}} Renders a div with an ID, class, style and text (different order) 1`] = `
+"<div class="block cat" id="dog" style="color:red;"><p>Sample text.</p>
+</div>"
+`;
 
-exports[`Injection: When an injection tag follows an element and that element is a block renders an h2 header "text" with injected class name 1`] = `"<h2>text</h2><p>{ClassName}</p>"`;
+exports[`Block: When using the Block syntax {{tags\\ntext\\n}} Renders a div with an ID, class, style and text, and a variable assignment 1`] = `
+"<div class="block cat" id="dog" style="color:red;" a="b and c" d="e"><p>Sample text.</p>
+</div>"
+`;
 
-exports[`Injection: When an injection tag follows an element and that element is a block renders an h2 header "text" with injected class name, and "secondInjection" as regular text on the next line. 1`] = `"<h2>text</h2><p>{ClassName}{secondInjection}</p>"`;
+exports[`Block: When using the Block syntax {{tags\\ntext\\n}} Renders a div with text only 1`] = `
+"<div class="block"><p>text</p>
+</div>"
+`;
 
-exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders an image and added attributes with "=" in the value,  1`] = `"<p><img src="https://i.imgur.com/hMna6G0.png" alt="homebrew mug"> {position:absolute,bottom:20px,left:130px,width:220px,a=&quot;b and c&quot;,d=e,otherUrl=&quot;url?auth=12345&quot;}</p>"`;
+exports[`Block: When using the Block syntax {{tags\\ntext\\n}} Renders a div with two classes and text 1`] = `
+"<div class="block cat dog"><p>Sample text.</p>
+</div>"
+`;
 
-exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders an image with "=" in the url, and added attributes 1`] = `"<p><img src="https://i.imgur.com/hMna6G0.png?auth=12345&height=1024" alt="homebrew mug"> {position:absolute,bottom:20px,left:130px,width:220px,a=&quot;b and c&quot;,d=e}</p>"`;
+exports[`Block: When using the Block syntax {{tags\\ntext\\n}} Renders a single paragraph with opening and closing brackets 1`] = `
+"<p>{{
+}}</p>
+"
+`;
 
-exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders an image with added attributes 1`] = `"<p><img src="https://i.imgur.com/hMna6G0.png" alt="homebrew mug"> {position:absolute,bottom:20px,left:130px,width:220px,a=&quot;b and c&quot;,d=e}</p>"`;
+exports[`Block: When using the Block syntax {{tags\\ntext\\n}} Renders an empty div 1`] = `
+"<p>{{
+}}</p>
+"
+`;
 
-exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders an parent and child element, each modified by an injector 1`] = `"<p><strong>bolded text</strong>{color:red}{color:blue}</p>"`;
+exports[`Injection: When an injection tag follows an element and that element is a block Renders a span "text" with its own ID, overwritten with an injected ID 1`] = `"<div class="block" id="newId"><p>text</p></div>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is a block Renders a span "text" with its own attributes, overwritten with an injected attribute, ignoring "class", "style", and "id" 1`] = `"<div class="block" attrA="new" attrB="old" attrC="new"><p>text</p></div>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is a block Renders a span "text" with its own attributes, overwritten with an injected attribute, plus a new one 1`] = `"<div class="block" attrA="new" attrB="old" attrC="new"><p>text</p></div>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is a block Renders a span "text" with its own classes, appended with injected classes 1`] = `"<div class="block classA classB classA classC"><p>text</p></div>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is a block Renders a span "text" with its own styles, appended with injected styles 1`] = `"<div class="block" style="color:red; height:10px; width:10px;"><p>text</p></div>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is a block renders a div "text" with injected Class name 1`] = `
+"<div class="block ClassName"><p>text</p>
+</div>"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is a block renders a div "text" with injected style 1`] = `
+"<div class="block" style="color:red;"><p>text</p>
+</div>"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is a block renders a div "text" with injected variable string 1`] = `"<div class="block" style="--stringVariable:'string';"><p>text</p></div>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is a block renders a div "text" with no injection 1`] = `
+"<div class="block"><p>text</p>
+</div>"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is a block renders a div "text" with two injected styles 1`] = `"<div class="block" style="color:red; background:blue;"><p>text</p></div>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is a block renders a div nested into another div, the inner with class=innerDiv and the other class=outerDiv 1`] = `"<div class="block outerDiv"><p>outer text</p><div class="block innerDiv"><p>inner text</p></div></div>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is a block renders a table with injected class name 1`] = `"<table><thead><tr><th align="left">Experience Points</th><th align="center">Level</th></tr></thead><tbody><tr><td align="left">0</td><td align="center">1</td></tr><tr><td align="left">300</td><td align="center">2</td></tr></tbody></table>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is a block renders an h2 header "text" with injected class name 1`] = `"<h2 class="ClassName">text</h2>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is a block renders an h2 header "text" with injected class name, and "secondInjection" as regular text on the next line. 1`] = `"<h2 class="ClassName">text</h2><p>{secondInjection}</p>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders a code element with injected style 1`] = `
+"<p><code style="background:gray;">code</code></p>
+"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders a span "text" with injected Class name 1`] = `
+"<p><span class="inline-block ClassName">text</span></p>
+"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders a span "text" with injected attribute 1`] = `
+"<p><span class="inline-block" a="b and c">text</span></p>
+"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders a span "text" with injected style 1`] = `
+"<p><span class="inline-block" style="color:red;">text</span></p>
+"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders a span "text" with injected style using a string variable 1`] = `
+"<p><span class="inline-block" style="--stringVariable:'string';">text</span></p>
+"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders a span "text" with its own ID, overwritten with an injected ID 1`] = `
+"<p><span class="inline-block" id="newId">text</span></p>
+"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders a span "text" with its own attributes, overwritten with an injected attribute, ignoring "class", "style", and "id" 1`] = `
+"<p><span class="inline-block" attrA="new" attrB="old" attrC="new">text</span></p>
+"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders a span "text" with its own attributes, overwritten with an injected attribute, plus a new one 1`] = `
+"<p><span class="inline-block" attrA="new" attrB="old" attrC="new">text</span></p>
+"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders a span "text" with its own classes, appended with injected classes 1`] = `
+"<p><span class="inline-block classA classB classA classC">text</span></p>
+"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders a span "text" with its own styles, appended with injected styles 1`] = `
+"<p><span class="inline-block" style="color:red; height:10px; width:10px;">text</span></p>
+"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders a span "text" with no injection 1`] = `
+"<p><span class="inline-block">text</span></p>
+"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders a span "text" with two injected styles 1`] = `
+"<p><span class="inline-block" style="color:red; background:blue;">text</span></p>
+"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders an element modified by only the first of two consecutive injections 1`] = `
+"<p><span class="inline-block" style="color:red;">text</span>{background:blue}</p>
+"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders an emphasis element with injected Class name 1`] = `
+"<p><em class="big">emphasis</em></p>
+"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders an image and added attributes with "=" in the value,  1`] = `"<p><img style="position:absolute; bottom:20px; left:130px; width:220px;" src="https://i.imgur.com/hMna6G0.png" alt="homebrew mug" a="b and c" d="e" otherUrl="url?auth=12345"></p>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders an image element with injected style 1`] = `
+"<p><img style="position:absolute;" src="https://i.imgur.com/hMna6G0.png" alt="alt text"></p>
+"
+`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders an image with "=" in the url, and added attributes 1`] = `"<p><img style="position:absolute; bottom:20px; left:130px; width:220px;" src="https://i.imgur.com/hMna6G0.png?auth=12345&height=1024" alt="homebrew mug" a="b and c" d="e"></p>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders an image with added attributes 1`] = `"<p><img style="position:absolute; bottom:20px; left:130px; width:220px;" src="https://i.imgur.com/hMna6G0.png" alt="homebrew mug" a="b and c" d="e"></p>"`;
+
+exports[`Injection: When an injection tag follows an element and that element is an inline-block Renders an parent and child element, each modified by an injector 1`] = `"<p style="color:blue;"><strong style="color:red;">bolded text</strong></p>"`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders a mustache span with a few spaces only 1`] = `
+"<p><span class="inline-block"></span></p>
+"
+`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders a mustache span with just a space 1`] = `
+"<p><span class="inline-block"></span></p>
+"
+`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders a mustache span with text and class 1`] = `
+"<p><span class="inline-block my-class">text</span></p>
+"
+`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders a mustache span with text and css property 1`] = `
+"<p><span class="inline-block" style="color:red;">text</span></p>
+"
+`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders a mustache span with text and css property which contains quotes 1`] = `
+"<p><span class="inline-block" style="font-family:trebuchet ms;">text</span></p>
+"
+`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders a mustache span with text and id 1`] = `
+"<p><span class="inline-block" id="my-span">text</span></p>
+"
+`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders a mustache span with text and two classes 1`] = `
+"<p><span class="inline-block my-class my-class2">text</span></p>
+"
+`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders a mustache span with text and two css properties 1`] = `
+"<p><span class="inline-block" style="color:red; padding:5px;">text</span></p>
+"
+`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders a mustache span with text and two css properties which contains quotes 1`] = `
+"<p><span class="inline-block" style="font-family:trebuchet ms; padding:5px 10px;">text</span></p>
+"
+`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders a mustache span with text and two ids 1`] = `
+"<p><span class="inline-block" id="my-span">text</span></p>
+"
+`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders a mustache span with text only 1`] = `
+"<p><span class="inline-block">text</span></p>
+"
+`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders a mustache span with text only, but with spaces 1`] = `
+"<p><span class="inline-block">this is a text</span></p>
+"
+`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders a mustache span with text with quotes and css property which contains double and simple quotes 1`] = `
+"<p><span class="inline-block" style="--stringVariable:'string';">text &quot;with quotes&quot;</span></p>
+"
+`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders a mustache span with text with quotes and css property which contains double quotes 1`] = `
+"<p><span class="inline-block" style="font-family:trebuchet ms;">text &quot;with quotes&quot;</span></p>
+"
+`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders a mustache span with text with spaces and class 1`] = `
+"<p><span class="inline-block my-class">this is a text</span></p>
+"
+`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders a mustache span with text, id, class and a couple of css properties 1`] = `
+"<p><span class="inline-block pen" id="author" style="color:orange; font-family:trebuchet ms;">text</span></p>
+"
+`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders a span with added attributes 1`] = `
+"<p>Text and <span class="inline-block pen" id="author" style="color:orange; font-family:trebuchet ms;" a="b and c" d="e">text</span> and more text!</p>
+"
+`;
+
+exports[`Inline: When using the Inline syntax {{ }} Renders an empty mustache span 1`] = `
+"<p><span class="inline-block"></span></p>
+"
+`;

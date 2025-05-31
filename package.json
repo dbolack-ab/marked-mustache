@@ -54,7 +54,8 @@
     "jest-cli": "^29.7.0",
     "marked": "^15.0.4",
     "rollup": "^4.29.2",
-    "semantic-release": "^24.2.0"
+    "semantic-release": "^24.2.0",
+    "lodash": "^4.17.21"
   },
   "dependencies": {
     "dedent-tabs": "^0.10.3"
